@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CoreModule } from './core/core.module';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'client';
+  title = 'Tutorial de Angular';
 }
+
+
