@@ -4,6 +4,7 @@ import { CategoryListComponent } from './category/category-list/category-list.co
 import { AuthorListComponent } from './author/author-list/author-list.component';
 import { GameListComponent } from './game/game-list/game-list.component';
 import { UserListComponent } from './user/user-list/user-list.component';
+import { LoanListComponent } from './loan/loan-list/loan-list.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'authors', component: AuthorListComponent },
   { path: 'games', component: GameListComponent },
   { path: 'users', component: UserListComponent },
+  { path: 'loans', component: LoanListComponent },
 ];
 
 @NgModule({

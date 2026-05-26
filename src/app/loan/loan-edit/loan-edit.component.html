@@ -1,0 +1,58 @@
+<div class="container">
+    <h1 *ngIf="loan == null">Crear préstamo</h1>
+    <h1 *ngIf="loan != null">Modificar préstamo</h1>
+
+    <form>
+        <mat-form-field class="small">
+            <mat-label>Identificador</mat-label>
+            <input type="text" matInput placeholder="Identificador" [(ngModel)]="loan.id" name="id" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Nombre del usuario</mat-label>
+            <mat-select matInput placeholder="Nombre del usuario" disableRipple [(ngModel)]="loan.user" name="user" required>
+                <mat-option *ngFor="let user of users" [value]="user">{{user.name}}</mat-option>
+            </mat-select>
+            <mat-error>El nombre del usuario no puede estar vacío</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Nombre del juego</mat-label>
+            <mat-select matInput placeholder="Nombre del juego" disableRipple [(ngModel)]="loan.game" name="game" required>
+                <mat-option *ngFor="let game of games" [value]="game">{{game.title}}</mat-option>
+            </mat-select>
+            <mat-error>El nombre del juego no puede estar vacío</mat-error>
+        </mat-form-field>
+
+        <table>
+            <tr>
+                <th style="color:rgb(183, 183, 183); text-align: center;">fechas de préstamo</th>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field>
+            <mat-label>Fecha de inicio</mat-label>
+            <input [matDatepicker]="datepicker_start" matInput placeholder="Fecha inicial"  name="start_date" [(ngModel)]="loan.startDate" required>
+            <mat-datepicker-toggle matSuffix [for]="datepicker_start" ></mat-datepicker-toggle>
+            <mat-datepicker #datepicker_start></mat-datepicker>
+            <mat-error>La fecha de inicio no puede estar vacía</mat-error>
+        </mat-form-field>
+
+                </td>
+                <td>    
+        <mat-form-field>
+            <mat-label>Fecha de fin</mat-label>
+            <input [matDatepicker]="datepicker_end" matInput placeholder="Fecha final" [(ngModel)]="loan.endDate" name="end_date" required>
+            <mat-datepicker-toggle matSuffix [for]="datepicker_end" ></mat-datepicker-toggle>
+           <mat-datepicker #datepicker_end></mat-datepicker>
+            <mat-error>La fecha de finalización no puede estar vacía</mat-error>
+        </mat-form-field>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div class="buttons">
+        <button mat-stroked-button (click)="onClose()">Cerrar</button>
+        <button mat-flat-button color="primary" (click)="onSave()">Guardar</button>
+    </div>
+</div>

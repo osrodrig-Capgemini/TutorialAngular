@@ -8,7 +8,7 @@ import { DialogConfirmationComponent } from 'src/app/core/dialog-confirmation/di
 import { UrlSerializer } from '@angular/router';
 
 @Component({
-  selector: 'app-category-list',
+  selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss']
 })
@@ -23,7 +23,7 @@ export class UserListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.userService.getCategories().subscribe(
+    this.userService.getUsers().subscribe(
       (categories: User[]) => this.dataSource.data = categories
     );
   }

@@ -1,0 +1,22 @@
+.container {
+    min-width: 550px;
+    max-width: 600px;
+    padding: 20px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        margin-bottom:20px;
+    }
+    .small {
+        width: 33%;
+        flex-direction: column;
+    }
+    .buttons {
+    text-align: right;
+
+    button {
+        margin-left: 10px;
+    }
+    }
+}
